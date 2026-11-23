@@ -1,0 +1,41 @@
+/* Páginas de privacidad y soporte de las apps: solo texto, sin nada que se
+   descargue de fuera, en claro y en oscuro. */
+:root {
+  --fondo: #F4F7FA;
+  --hoja: #FFFFFF;
+  --texto: #10202F;
+  --suave: #4A5D6E;
+  --acento: #0A5FB4;
+  --linea: #D8E2EB;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: #0B1825;
+    --hoja: #12263A;
+    --texto: #E8F0F7;
+    --suave: #A9BBCB;
+    --acento: #6BB6FF;
+    --linea: #24405A;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Helvetica Neue", Arial, sans-serif;
+  padding: 32px max(16px, env(safe-area-inset-left)) 56px max(16px, env(safe-area-inset-right));
+}
+main { max-width: 680px; margin: 0 auto; background: var(--hoja); border: 1px solid var(--linea); border-radius: 16px; padding: 28px 24px; }
+h1 { font-size: 28px; line-height: 1.2; margin: 0 0 6px; }
+h2 { font-size: 19px; margin: 28px 0 6px; }
+p, li { max-width: 62ch; }
+.fecha, nav { color: var(--suave); font-size: 15px; }
+.entrada { font-size: 19px; }
+a { color: var(--acento); }
+a:focus-visible { outline: 2px solid var(--acento); outline-offset: 2px; }
+ul { padding-left: 20px; }
+nav { margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--linea); }
+code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 15px; }
